@@ -1,13 +1,22 @@
 import React from "react";
 
 export function Seconds(props) {
+	const one = Math.floor((props.seconds / 100000) % 10);
+	const two = Math.floor((props.seconds / 10000) % 10);
+	const three = Math.floor((props.seconds / 1000) % 10);
+	const four = Math.floor((props.seconds / 100) % 10);
+	const five = Math.floor((props.seconds / 10) % 10);
+	const six = Math.floor((props.seconds / 1) % 10);
+
 	return (
-		<div className="container d-flex justify-content-center p-5 ">
-			<p className="Clock"></p>
-			<p className="border border-dark p-3">{four % 10}</p>
-			<p className="border border-dark p-3">{three % 10}</p>
-			<p className="border border-dark p-3">{two % 10}</p>
-			<p className="border border-dark p-3">{one % 10}</p>
+		<div className="big">
+			<div className="div">🕘</div>
+			<div className="div">{one}</div>
+			<div className="div">{two}</div>
+			<div className="div">{three}</div>
+			<div className="div">{four}</div>
+			<div className="div">{five}</div>
+			<div className="div">{six}</div>
 		</div>
 	);
 }

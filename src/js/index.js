@@ -7,6 +7,16 @@ import "../styles/index.css";
 
 //import your own components
 import Home from "./component/home.jsx";
+import { Seconds } from "./component/Seconds.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+
+const start = Date.now();
+
+setInterval(() => {
+	const seconds = Math.floor((Date.now() - start) / 1000);
+	ReactDOM.render(
+		<Seconds seconds={seconds} />,
+		document.querySelector("#app")
+	);
+});
